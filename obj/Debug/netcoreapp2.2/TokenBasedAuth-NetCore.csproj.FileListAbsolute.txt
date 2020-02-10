@@ -1,0 +1,16 @@
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.deps.json
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.runtimeconfig.json
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.runtimeconfig.dev.json
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.dll
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.pdb
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.csprojAssemblyReference.cache
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.RazorAssemblyInfo.cache
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.RazorAssemblyInfo.cs
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.AssemblyInfoInputs.cache
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.AssemblyInfo.cs
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.RazorTargetAssemblyInfo.cache
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.dll
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.pdb
