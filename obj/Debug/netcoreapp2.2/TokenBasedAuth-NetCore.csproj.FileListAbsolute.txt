@@ -14,3 +14,5 @@ C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.RazorTargetAssemblyInfo.cache
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.dll
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.pdb
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.csproj.CoreCompileInputs.cache
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.genruntimeconfig.cache

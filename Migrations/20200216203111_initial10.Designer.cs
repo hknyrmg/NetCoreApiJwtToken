@@ -10,8 +10,8 @@ using TokenBasedAuth_NetCore.Context;
 namespace TokenBasedAuth_NetCore.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20200204221810_Initial-create")]
-    partial class Initialcreate
+    [Migration("20200216203111_initial10")]
+    partial class initial10
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,6 +38,42 @@ namespace TokenBasedAuth_NetCore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("TokenBasedAuth_NetCore.Entities.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ActivationCode");
+
+                    b.Property<DateTime>("CreatedOn");
+
+                    b.Property<string>("Email");
+
+                    b.Property<DateTime>("LastLogon");
+
+                    b.Property<string>("Login")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Password");
+
+                    b.Property<string>("Phone");
+
+                    b.Property<string>("SurName")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Token");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(50);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

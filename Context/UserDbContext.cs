@@ -14,6 +14,7 @@ namespace TokenBasedAuth_NetCore.Context
                 
         }
         DbSet<Customer> Customers { get; set; }
+        DbSet<User> Users { get; set; }
 
     }
 }

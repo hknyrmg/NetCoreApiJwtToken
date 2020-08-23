@@ -15,6 +15,7 @@ using TokenBasedAuth_NetCore.Context;
 using TokenBasedAuth_NetCore.Providers;
 using TokenBasedAuth_NetCore.Repository;
 using TokenBasedAuth_NetCore.UnitofWork;
+using TokenBasedAuth_NetCore.Utils;
 
 namespace TokenBasedAuth_NetCore
 {
@@ -30,7 +31,7 @@ namespace TokenBasedAuth_NetCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {            services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddDbContext<UserDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<UserDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString(ConstantKeys.DefaultConnection)));
             services.AddScoped<DbContext, UserDbContext>();
             services.AddScoped<ICacheProvider, CacheProvider>();
 

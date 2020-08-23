@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using TokenBasedAuth_NetCore.Context;
@@ -73,16 +74,45 @@ namespace TokenBasedAuth_NetCore.Repository
             _dbset.Remove(entity);
         }
 
-        public T Find(long Id)
+        public T Find(int id)
+        {
+ 
+                return _context.Set<T>().Find(id);
+           
+        }
+
+        public void Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(long Id)
+        public int executeSqlQuery(string sqlQuery, params object[] parameters)
         {
-            throw new NotImplementedException();
+            return _context.Database.ExecuteSqlCommand(sqlQuery, parameters);
+             
+        }
+        public int executeSqlQuery(string sqlQuery, IEnumerable<object> parameters)
+        {
+
+            return _context.Database.ExecuteSqlCommand(sqlQuery, parameters);
+        }
+  
+        public int executeSqlQuery(string sqlQuery)
+        {
+          return _context.Database.ExecuteSqlCommand(sqlQuery);
+            
+        }
+        public IQueryable<T> getEntityFromQuery(string sqlQuery)
+        {
+            return _dbset.FromSql<T>(sqlQuery);
+
+        }
+        public IQueryable<T> getEntityFromQuery(string sqlQuery, params SqlParameter[] parameters)
+        {
+            return _dbset.FromSql<T>(sqlQuery, parameters);
         }
 
+      
         #endregion SetterMethods
     }
 }
