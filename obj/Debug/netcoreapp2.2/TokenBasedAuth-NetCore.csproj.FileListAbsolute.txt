@@ -1,6 +1,5 @@
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\appsettings.Development.json
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\appsettings.json
-C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.deps.json
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.runtimeconfig.json
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.runtimeconfig.dev.json

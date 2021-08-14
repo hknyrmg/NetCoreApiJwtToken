@@ -6,13 +6,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using TokenBasedAuth_NetCore.Context;
 using TokenBasedAuth_NetCore.Models;
 using TokenBasedAuth_NetCore.Providers;
 using TokenBasedAuth_NetCore.Services;
+using TokenBasedAuth_NetCore.Services.Trivia;
 using TokenBasedAuth_NetCore.UnitofWork;
 using TokenBasedAuth_NetCore.Utilities.Helper;
 using TokenBasedAuth_NetCore.Utils;
@@ -53,19 +52,40 @@ namespace TokenBasedAuth_NetCore
                 };
             });
             #endregion
-            services.AddCors();
+            #region CorsSection
 
+            //Cors ayarları
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder
+                    //.WithOrigins("http://localhost:4200")
+                    .AllowAnyOrigin()
+                    //.WithMethods("GET", "POST")
+                    .AllowAnyMethod()
+                    //.WithHeaders("accept", "content-type", "origin", "No-Auth")
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
+
+            #endregion CorsSection
             // configure strongly typed settings object
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddDbContext<UserDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString(ConstantKeys.DefaultConnection)));
+            services.AddDbContext<TriviaDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString(ConstantKeys.TriviaConnection)));
+
             services.AddScoped<DbContext, UserDbContext>();
+            services.AddScoped<DbContext, TriviaDbContext>();
+
             services.AddScoped<ICacheProvider, CacheProvider>();
             // configure DI for application services
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMemoryCache();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ITriviaService, TriviaService>();
+
 
         }
 
@@ -73,25 +93,19 @@ namespace TokenBasedAuth_NetCore
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
 
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
-            //else
-            //{
-            //    app.UseHsts();
-            //}
-            // global cors policy
-            app.UseCors(x => x
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
+          
+
+            app.UseHttpsRedirection();
 
             // custom jwt auth middleware
             app.UseMiddleware<JwtMiddleware>();
 
             app.UseAuthentication();
+            #region CorsSection
 
+            app.UseCors("CorsPolicy");
+
+            #endregion CorsSection
             app.UseMvc();
         }
     }

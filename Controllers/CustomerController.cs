@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace TokenBasedAuth_NetCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AllowAnonymous]
     public class CustomerController : Controller
     {
         private readonly IGenericRepository<Customer> _genericRepository;
@@ -28,19 +30,28 @@ namespace TokenBasedAuth_NetCore.Controllers
 
         }
         [HttpGet]
+
         public List<Customer> GetAll()
         {
             List<Customer> customers;
 
 
             List<Customer> customerList = _cacheProvider.GetFromCache<List<Customer>>(CacheKeys.customerList);
-            if (customerList != null)
+            if (customerList != null && customerList.Count > 0)
             {
                 return customerList;
             }
+            else
+            {
+                var watch = System.Diagnostics.Stopwatch.StartNew();
+             
+                customers = _unitOfWork.GetRepository<Customer>().GetAll().ToList();
+                _cacheProvider.SetCache<List<Customer>>(CacheKeys.customerList, customers, DateTimeOffset.Now.AddDays(1));
+                // the code that you want to measure comes here
+                watch.Stop();
+                var elapsedMs = watch.ElapsedMilliseconds;
+            }
 
-            customers = _unitOfWork.GetRepository<Customer>().GetAll().ToList();
-            _cacheProvider.SetCache<List<Customer>>(CacheKeys.customerList, customers, DateTimeOffset.Now.AddDays(1));
 
             return customers;
         }
@@ -58,6 +69,6 @@ namespace TokenBasedAuth_NetCore.Controllers
             return customer;
         }
 
-        
+
     }
 }

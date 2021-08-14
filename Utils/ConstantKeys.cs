@@ -8,5 +8,8 @@ namespace TokenBasedAuth_NetCore.Utils
     public class ConstantKeys
     {
         public static string DefaultConnection = "DefaultConnection";
+        public static string TriviaConnection = "TriviaConnection";
+
+        
     }
 }
