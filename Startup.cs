@@ -31,6 +31,7 @@ namespace TokenBasedAuth_NetCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc(options => options.EnableEndpointRouting = false);
             #region JWT Token
             var appSettings = Configuration.GetSection("AppSettings").Get<AppSettings>();
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
@@ -58,14 +59,9 @@ namespace TokenBasedAuth_NetCore
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
-                    builder => builder
-                    //.WithOrigins("http://localhost:4200")
-                    .AllowAnyOrigin()
-                    //.WithMethods("GET", "POST")
-                    .AllowAnyMethod()
-                    //.WithHeaders("accept", "content-type", "origin", "No-Auth")
-                    .AllowAnyHeader()
-                    .AllowCredentials());
+                       builder => builder.WithOrigins("http://localhost:4455")
+                           .AllowAnyMethod()
+                           .AllowAnyHeader());
             });
 
             #endregion CorsSection
@@ -73,24 +69,31 @@ namespace TokenBasedAuth_NetCore
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddDbContext<UserDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString(ConstantKeys.DefaultConnection)));
-            services.AddDbContext<TriviaDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString(ConstantKeys.TriviaConnection)));
+            //services.AddDbContext<UserDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString(ConstantKeys.DefaultConnection)));
+            //services.AddDbContext<TriviaDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString(ConstantKeys.TriviaConnection)));
+
+
+   
+            // .NET 6 Style
+            services.AddSqlServer<UserDbContext>(
+                                Configuration.GetConnectionString(ConstantKeys.DefaultConnection));
+            services.AddSqlServer<TriviaDbContext>(
+                               Configuration.GetConnectionString(ConstantKeys.TriviaConnection));
 
             services.AddScoped<DbContext, UserDbContext>();
             services.AddScoped<DbContext, TriviaDbContext>();
 
             services.AddScoped<ICacheProvider, CacheProvider>();
-            // configure DI for application services
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+     
             services.AddMemoryCache();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITriviaService, TriviaService>();
-
+            services.AddScoped<IDapperService, DapperService>();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
           
@@ -101,12 +104,15 @@ namespace TokenBasedAuth_NetCore
             app.UseMiddleware<JwtMiddleware>();
 
             app.UseAuthentication();
+            app.UseAuthorization();
+
             #region CorsSection
 
             app.UseCors("CorsPolicy");
 
             #endregion CorsSection
             app.UseMvc();
+
         }
     }
 }

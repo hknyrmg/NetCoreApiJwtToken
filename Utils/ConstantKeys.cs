@@ -10,6 +10,7 @@ namespace TokenBasedAuth_NetCore.Utils
         public static string DefaultConnection = "DefaultConnection";
         public static string TriviaConnection = "TriviaConnection";
 
-        
+        public const string Admin = "Admin";
+        public const string User = "User";
     }
 }

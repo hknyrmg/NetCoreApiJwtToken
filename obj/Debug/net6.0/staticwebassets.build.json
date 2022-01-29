@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "S8lASt/bBN8/J/dc5BpyCJgND6wIBcpG7AgQElwViyk=",
+  "Source": "TokenBasedAuth-NetCore",
+  "BasePath": "_content/TokenBasedAuth-NetCore",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

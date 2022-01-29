@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using TokenBasedAuth_NetCore.Entities.Enums;
 
 namespace TokenBasedAuth_NetCore.Entities
 {
@@ -48,5 +46,9 @@ namespace TokenBasedAuth_NetCore.Entities
         public DateTime CreatedOn { get; set; }
     
         public string Token { get; set; }
+
+
+
+        public string Role { get; set; }
     }
 }

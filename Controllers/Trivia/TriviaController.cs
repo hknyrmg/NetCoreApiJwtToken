@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using TokenBasedAuth_NetCore.Entities.Trivia;
 using TokenBasedAuth_NetCore.Models;
@@ -42,7 +43,6 @@ namespace TokenBasedAuth_NetCore.Controllers.Trivia
                 Result = categories
             };
             return Ok(responseModel);
-
 
         }
     }

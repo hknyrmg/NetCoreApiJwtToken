@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using TokenBasedAuth_NetCore.Context;
@@ -88,28 +88,28 @@ namespace TokenBasedAuth_NetCore.Repository
 
         public int executeSqlQuery(string sqlQuery, params object[] parameters)
         {
-            return _context.Database.ExecuteSqlCommand(sqlQuery, parameters);
+            return _context.Database.ExecuteSqlRaw(sqlQuery, parameters);
              
         }
         public int executeSqlQuery(string sqlQuery, IEnumerable<object> parameters)
         {
 
-            return _context.Database.ExecuteSqlCommand(sqlQuery, parameters);
+            return _context.Database.ExecuteSqlRaw(sqlQuery, parameters);
         }
   
         public int executeSqlQuery(string sqlQuery)
         {
-          return _context.Database.ExecuteSqlCommand(sqlQuery);
+          return _context.Database.ExecuteSqlRaw(sqlQuery);
             
         }
         public IQueryable<T> getEntityFromQuery(string sqlQuery)
         {
-            return _dbset.FromSql<T>(sqlQuery);
+            return _dbset.FromSqlRaw<T>(sqlQuery);
 
         }
         public IQueryable<T> getEntityFromQuery(string sqlQuery, params SqlParameter[] parameters)
         {
-            return _dbset.FromSql<T>(sqlQuery, parameters);
+            return _dbset.FromSqlRaw<T>(sqlQuery, parameters);
         }
 
       

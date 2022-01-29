@@ -5,7 +5,6 @@ C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.runtimeconfig.dev.json
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.dll
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\bin\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.pdb
-C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.csprojAssemblyReference.cache
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.RazorAssemblyInfo.cache
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.RazorAssemblyInfo.cs
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.AssemblyInfoInputs.cache
@@ -15,3 +14,5 @@ C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.pdb
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.csproj.CoreCompileInputs.cache
 C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.genruntimeconfig.cache
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.csproj.AssemblyReference.cache
+C:\Users\Hp\source\repos\TokenBasedAuth-NetCore\TokenBasedAuth-NetCore\obj\Debug\netcoreapp2.2\TokenBasedAuth-NetCore.GeneratedMSBuildEditorConfig.editorconfig
